@@ -12,6 +12,10 @@ h1 {
     margin-bottom: 0;
 }
 
+.smaller_text {
+    font-size: 2rem;
+}
+
 h2 {
     font-weight: 600;
     color: #113764;
