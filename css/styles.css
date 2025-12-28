@@ -162,7 +162,10 @@ img {
 }
 
 @media screen and (max-width: 519px) {
-    body {
-        zoom: 0.64;
+    html {
+        font-size: 64%;
+    }
+    svg {
+        transform: scale(0.64);
     }
 }
