@@ -82,9 +82,10 @@ p {
 }
 
 img {
-    zoom: 0.15;
-    border-radius: 8rem;
-    margin-bottom: 10.6rem;
+    width: 84.375%;
+    border-radius: 1.2rem;
+    margin-bottom: 1.59rem;
+    display: block;
 }
 
 .project {
