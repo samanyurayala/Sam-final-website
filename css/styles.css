@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background: var(--color-background)
+    background: var(--color-background);
 }
 
 h1 {
@@ -126,6 +126,12 @@ img {
     font-size: 2rem;
 }
 
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+}
+
 #theme_switch {
     height: 3.125rem;
     width: 3.125rem;
@@ -138,7 +144,7 @@ img {
     position: fixed;
     bottom: 1.25rem;
     right: 1.25rem;
-    border: 0.15625rem solid var(--color-primary)
+    border: 0.15625rem solid var(--color-primary);
 }
 
 #theme_switch:hover {
@@ -146,7 +152,7 @@ img {
 }
 
 #theme_switch svg {
-    fill: var(--color-primary)
+    fill: var(--color-primary);
 }
 
 #theme_switch svg:last-child {
