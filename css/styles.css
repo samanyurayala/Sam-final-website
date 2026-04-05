@@ -132,6 +132,14 @@ img {
     gap: 1.3rem;
 }
 
+.icons svg {
+    fill: var(--color-primary);
+}
+
+.icons svg:hover {
+    fill: var(--color-shadow);
+}
+
 #theme_switch {
     height: 3.125rem;
     width: 3.125rem;
