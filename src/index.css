@@ -14,6 +14,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('/fonts/AppleGaramond-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
   width: 100dvw;
   overflow: hidden;
@@ -27,6 +34,7 @@ html, body {
 @theme {
   --font-l: "Lucida Grande", sans-serif;
   --font-l-bold: "Lucida Grande Bold", sans-serif;
+  --font-g: "Apple Garamond", serif;
   --breakpoint-3xl: 1920px;
 }
 
@@ -83,18 +91,6 @@ html, body {
     @apply p-1 hover:bg-gray-200 rounded hover:cursor-default;
   }
 
-  #welcome {
-    @apply text-gray-200 flex flex-col justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none max-sm:h-screen max-sm:w-full max-sm:px-10;
-
-    .small-screen {
-      @apply sm:hidden m-7 bg-red-300/20 backdrop-blur-lg p-3 rounded-md absolute top-10;
-
-      p {
-        @apply flex-1 text-[16px] text-center font-l text-gray-400;
-      }
-    }
-  }
-
   #dock {
     @apply absolute bottom-0 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
@@ -126,20 +122,43 @@ html, body {
     @apply flex gap-2;
 
     .close {
-      @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+      background: radial-gradient(circle at 30% 70%, #ffb3ad 0%, #ff5f57 40%, #d32f2f 75%, #8b1a1a 100%);
     }
-
+  
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      background: radial-gradient(circle at 30% 70%, #fff3a8 0%, #ffcf4d 40%, #d4a017 75%, #8c6b00 100%);
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      background: radial-gradient(circle at 30% 70%, #b8f5c0 0%, #3edc5c 40%, #2e8b3c 75%, #145a1f 100%);
+    }
+
+    .close, .minimize, .maximize {
+      @apply size-3.5 rounded-full overflow-hidden relative z-50;
+      box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0.5px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .close::after, .minimize::after, .maximize::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      right: 2px;
+      height: 45%;
+      border-radius: 9999px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
     }
   }
 
   #window-header {
-    @apply flex items-center justify-between px-4 py-3 rounded-t-lg bg-gray-50 border-b border-gray-200 select-none text-sm text-gray-400;
+    @apply flex items-center justify-between py-0.75 px-2.75 rounded-t-xl border-b border-black select-none text-sm text-black relative z-50;
+    background-image: repeating-linear-gradient(
+      to bottom, 
+      #f0f0f0, 
+      #f0f0f0 2px, 
+      #e8e8e8 2px, 
+      #e8e8e8 4px
+    );
   }
 
   #safari {
@@ -186,48 +205,25 @@ html, body {
     }
   }
 
-  #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+  #welcome {
+    @apply w-xs absolute top-32 left-1/12 shadow-2xl drop-shadow-2xl rounded-b-xs rounded-t-md overflow-hidden;
+    background-image: repeating-linear-gradient(
+      to bottom, 
+      #e8e8e8, 
+      #e8e8e8 2px, 
+      #f8f8f8 2px, 
+      #f8f8f8 4px
+    );
 
     h2 {
-      @apply font-bold text-sm text-center w-full;
+      @apply absolute inset-x-0 text-sm text-center font-l;
     }
 
-    .techstack {
-      @apply text-sm font-l p-5;
+    .content {
+      @apply text-sm py-2 px-5 flex flex-col items-center;
 
-      .label {
-        @apply flex items-center ms-10 mt-7;
-      }
-
-      .content {
-        @apply py-5 my-5 border-y border-dashed space-y-1;
-
-        li {
-          .check {
-            @apply text-[#00A154] w-5;
-          }
-
-          h3 {
-            @apply font-semibold text-[#00A154] w-32 ms-5;
-          }
-
-          ul {
-            @apply flex items-center gap-3;
-          }
-        }
-      }
-
-      .footnote {
-        @apply text-[#00A154] space-y-1;
-
-        p {
-          @apply flex items-center;
-
-          svg {
-            @apply w-5 me-5;
-          }
-        }
+      li {
+        @apply px-2;
       }
     }
   }
@@ -325,7 +321,7 @@ html, body {
 
     #window-header {
       h2 {
-        @apply font-bold text-sm text-center flex-1;
+        @apply relative font-bold text-sm text-center flex-1;
       }
     }
   }
@@ -418,4 +414,3 @@ html, body {
     }
   }
 }
-
