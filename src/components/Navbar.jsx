@@ -17,7 +17,7 @@ const Navbar = () => {
             </ul>
         </div>
         <div>
-            <time datetime={new Date().toISOString()}>{rightNow}</time>
+            <time dateTime={new Date().toISOString()}>{rightNow}</time>
         </div>
     </nav>
   )

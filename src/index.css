@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: 'Lucida Grande';
-  src: url('/public/fonts/LucidaGrande.ttf') format('truetype');
+  src: url('/fonts/LucidaGrande.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Lucida Grande Bold';
-  src: url('/public/fonts/LucidaGrandeBold.ttf') format('truetype');
+  src: url('/fonts/LucidaGrandeBold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -18,7 +18,7 @@ html, body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url('/public/icons/wallpaper.png');
+  background-image: url('/icons/wallpaper.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,18 +96,25 @@ html, body {
   }
 
   #dock {
-    @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 z-50 select-none max-sm:hidden;
 
     .dock-container {
-      @apply bg-white/20 backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+      @apply justify-between p-1.5 flex items-end gap-1.5 border-t border-l border-r border-white/40;
+      background-image: repeating-linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.1), 
+        rgba(255, 255, 255, 0.1) 2px, 
+       rgba(255, 255, 255, 0.2) 2px, 
+       rgba(255, 255, 255, 0.2) 4px
+      );
     }
 
     .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+      @apply leading-none! w-fit! text-center! text-base! rounded-md! bg-transparent! text-white! shadow-2xl! font-l-bold! [text-shadow:3px_3px_5px_rgba(0,0,0,1)];
     }
 
     .dock-icon {
-      @apply size-14 3xl:size-20 cursor-pointer;
+      @apply size-16 3xl:size-20 cursor-pointer;
 
       img {
         @apply object-cover object-center;
