@@ -5,6 +5,7 @@ import { immer } from "zustand/middleware/immer";
 const useWindowStore = create(immer((set) => ({
         windows: WINDOW_CONFIG, 
         nextZIndex: INIT_Z + 1,
+        focusedWindowKey: null, 
         openWindow: (windowKey, data = null) => set((state) => {
             const win = state.windows[windowKey];
             if (!win) return;
@@ -12,6 +13,7 @@ const useWindowStore = create(immer((set) => ({
             win.zIndex = state.nextZIndex;
             win.data = data ?? win.data;
             state.nextZIndex++;
+            state.focusedWindowKey = windowKey;
         }),
         closeWindow: (windowKey) => set((state) => {
             const win = state.windows[windowKey];
@@ -19,11 +21,13 @@ const useWindowStore = create(immer((set) => ({
             win.open = false;
             win.zIndex = INIT_Z;
             win.data = null;
+            if (state.focusedWindowKey === windowKey) state.focusedWindowKey = null;
         }),
         focusWindow: (windowKey) => set((state) => {
             const win = state.windows[windowKey];
             if (!win) return;
             win.zIndex = state.nextZIndex++;
+            state.focusedWindowKey = windowKey;
         }),
     })), 
 );

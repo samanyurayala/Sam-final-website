@@ -19,4 +19,12 @@ const WINDOW_CONFIG = {
     explorer: { open: false, zIndex: INIT_Z, data: null},
     preferences: { open: false, zIndex: INIT_Z, data: null},
 }
-export { navBarLinks, rightNow, dockApps, INIT_Z, WINDOW_CONFIG };
+const EXPLORER_PROJECTS = [
+    { num: 1, id: "convenientminecraft", name: "Convenient Minecraft", description: "A Minecraft java mod that adds convenient features.", url: "https://modrinth.com/mod/convenient-minecraft" }, 
+    { num: 2, id: "freshcheck", name: "FreshCheck", description: "A compact solution for monitoring food freshness.", url: "https://github.com/samanyurayala/FreshCheck" }, 
+    { num: 3, id: "asciiimagegenerator", name: "Ascii Image Generator", description: "Made with C++ and ported to the web using WebAssembly.", url: "https://samanyurayala.github.io/ASCII-Image-Generator/" }, 
+    { num: 4, id: "banefulduality", name: "Baneful Duality", description: "Deliver the cure to the zombie virus.", url: "https://sidsenthil-exe.itch.io/baneful-duality" }, 
+    { num: 5, id: "forestsurvivorpro", name: "Forest Survivor Pro", description: "Complete all the tasks without getting hunted down.", url: "https://samcompany.itch.io/forestsurvivorpro" }, 
+    { num: 6, id: "signupwizard", name: "Easy Signup", description: "An easy, intuitive signup wizard.", url: "https://samanyurayala.github.io/Signup-Wizard/" }
+]
+export { navBarLinks, rightNow, dockApps, INIT_Z, WINDOW_CONFIG, EXPLORER_PROJECTS };

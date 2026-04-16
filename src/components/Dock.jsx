@@ -5,7 +5,7 @@ import { Tooltip } from 'react-tooltip';
 import useWindowStore from '@store/window';
 
 const Dock = () => {
-    const { openWindow, closeWindow, windows } = useWindowStore();
+    const { openWindow, focusWindow, windows } = useWindowStore();
     const dockRef = useRef(null);
 
     const toggle = (app) => {
@@ -13,11 +13,10 @@ const Dock = () => {
         const window = windows[app.id];
         if (!window) return;
         if (window.open) {
-            closeWindow(app.id);
+            focusWindow(app.id);
         } else {
             openWindow(app.id);
         }
-        console.log(windows);
     };
 
     return (

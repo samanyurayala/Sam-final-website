@@ -2,7 +2,7 @@ import Navbar from '@components/Navbar.jsx';
 import Dock from '@components/Dock.jsx';
 import gsap from 'gsap';
 import { Draggable } from 'gsap/Draggable';
-import { Welcome } from '@windows';
+import { Welcome, Projects } from '@windows';
 
 gsap.registerPlugin(Draggable);
 
@@ -13,6 +13,7 @@ const App = () => {
       <Dock />
 
       <Welcome />
+      <Projects />
     </main>
   )
 }
