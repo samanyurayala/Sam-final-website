@@ -38,18 +38,6 @@ html, body {
   --breakpoint-3xl: 1920px;
 }
 
-@utility flex-center {
-  @apply flex items-center justify-center;
-}
-
-@utility col-center {
-  @apply flex flex-col items-center justify-center;
-}
-
-@utility abs-center {
-  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
-}
-
 @layer base {
   main {
     @apply w-dvw h-dvh overflow-hidden;
@@ -161,7 +149,7 @@ html, body {
     );
   }
 
-  #welcome, #explorer {
+  #welcome, #explorer, #mail {
     @apply absolute top-32 left-1/12 shadow-2xl drop-shadow-2xl rounded-b-xs rounded-t-md overflow-hidden;
     background-image: repeating-linear-gradient(
       to bottom, 
@@ -206,5 +194,9 @@ html, body {
         @apply w-7/8 h-6 bg-white border border-black mx-3 text-black flex items-center px-2 overflow-hidden;
       }
     }
+  }
+
+  #mail {
+    @apply w-4xl;
   }
 }

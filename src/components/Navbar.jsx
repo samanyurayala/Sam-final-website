@@ -20,7 +20,7 @@ const Navbar = () => {
             <p className="leading-none font-l-bold translate-y-0.5 [text-shadow:0_2px_1px_rgba(0,0,0,0.275)]">TheRealSam</p>
             <ul>
                 <li className="font-l" onClick={() => toggle({ id: 'explorer', openable: true})}>Projects</li>
-                <li className="font-l" onClick={() => toggle({ id: 'about', openable: true})}>About</li>
+                <li className="font-l" onClick={() => toggle({ id: 'mail', openable: true})}>About</li>
             </ul>
         </div>
         <div>
