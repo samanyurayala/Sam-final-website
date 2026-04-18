@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root {
+  --wallpaper: url("/icons/wallpaper.avif");
+}
+
 @font-face {
   font-family: 'Lucida Grande';
   src: url('/fonts/LucidaGrande.ttf') format('truetype');
@@ -25,7 +29,7 @@ html, body {
   width: 100dvw;
   overflow: hidden;
   height: 100dvh;
-  background-image: url('/icons/wallpaper.png');
+  background-image: var(--wallpaper);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -140,7 +144,7 @@ html, body {
     }
   }
 
-  #window-header {
+  .window-header {
     @apply flex items-center justify-between py-0.75 px-2.75 border-b border-black select-none text-sm text-black relative z-50;
     background-image: repeating-linear-gradient(
       to bottom, 
@@ -151,7 +155,7 @@ html, body {
     );
   }
 
-  #welcome, #explorer, #mail, #finder {
+  #welcome, #explorer, #mail, #finder, #preferences {
     @apply absolute top-32 left-1/12 shadow-2xl drop-shadow-2xl rounded-b-xs rounded-t-md overflow-hidden;
     background-image: repeating-linear-gradient(
       to bottom, 
@@ -222,5 +226,26 @@ html, body {
       }
     }
 
+  }
+
+  #preferences {
+    @apply w-lg;
+    .content {
+      select {
+        @apply h-8 w-24 rounded-full overflow-hidden relative z-50;
+        box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 0.5px 0 rgba(255, 255, 255, 0.3);
+      }
+
+      select::after {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 2px;
+        right: 2px;
+        height: 45%;
+        border-radius: 9999px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+      }
+    }
   }
 }

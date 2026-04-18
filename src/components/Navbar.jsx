@@ -1,10 +1,29 @@
-import { rightNow } from '@constants'
-import React from 'react'
+import { timeState } from '../global/index.js';
+import React from 'react';
 import useWindowStore from '@store/window';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useTimeStore } from '@store/time';
 
 
 const Navbar = () => {
     const { openWindow, focusWindow, windows } = useWindowStore();
+
+    const { is12h, timeZone } = useTimeStore();
+
+    const [rightNow, setRightNow] = useState("");
+
+    useEffect(() => {
+        const currentTime = new Intl.DateTimeFormat('en-US', { timeZone: timeZone, weekday: 'short', hour: 'numeric', minute: '2-digit', hour12: is12h === "12h" });
+        const updateTime = () => {
+             
+            setRightNow(currentTime.format(new Date()));
+        };
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
+        return () => clearInterval(interval);
+    }, [timeZone, is12h]);
+
     const toggle = (app) => {
         if (!app.openable) return;
         const window = windows[app.id];

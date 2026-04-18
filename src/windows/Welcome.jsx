@@ -5,7 +5,7 @@ import WindowControls from '@components/WindowControls';
 const Welcome = () => {
   return (
     <>
-        <div id="window-header">
+        <div className="window-header">
             <WindowControls target="welcome" />
             <h2>Welcome</h2>
         </div>

@@ -2,7 +2,6 @@ const navBarLinks = [
                 { id: 1, name: "Projects" },
                 { id: 2, name: "About" },
              ];
-const rightNow = new Intl.DateTimeFormat('en-US', { weekday: 'short', hour: 'numeric', minute: '2-digit', hour12: true }).format(new Date());
 const dockApps = [
     { id: "finder", name: "Portfolio", icon: "finder.png", openable: true, link: "" },
     { id: "mail", name: "About", icon: "mail.png", openable: true, link: "" },
@@ -44,4 +43,4 @@ const locations = [
     { id: 3, apps: favoritesApps },
     { id: 4, apps: dockApps }
 ];
-export { navBarLinks, rightNow, dockApps, INIT_Z, WINDOW_CONFIG, EXPLORER_PROJECTS, locations };
+export { navBarLinks, dockApps, INIT_Z, WINDOW_CONFIG, EXPLORER_PROJECTS, locations };

@@ -5,7 +5,7 @@ import WindowControls from '@components/WindowControls';
 const About = () => {
   return (
     <>
-        <div id="window-header">
+        <div className="window-header">
             <WindowControls target="mail" />
             <h2>About Me</h2>
         </div>

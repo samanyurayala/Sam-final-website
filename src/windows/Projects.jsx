@@ -31,7 +31,7 @@ const Projects = () => {
   const project = EXPLORER_PROJECTS[index];
   return (
     <>
-        <div id="window-header">
+        <div className="window-header">
             <WindowControls target="explorer" />
             <h2>Projects</h2>
         </div>

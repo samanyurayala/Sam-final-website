@@ -25,27 +25,27 @@ const Portfolio = () => {
 
     return (
     <>
-        <div id="window-header">
+        <div className="window-header">
             <WindowControls target="finder" />
             <h2>Portfolio</h2>
         </div>
         <div className="content">
             <div className="flex items-center gap-6 font-l pt-2">
-                <button className="back -translate-y-1 translate-x-3" onClick={() => setActiveLoc((activeLoc + 3) % 4)}>&#9664;••</button>
+                <button className="back -translate-y-1 translate-x-3 hover:cursor-pointer" onClick={() => setActiveLoc((activeLoc + 3) % 4)}>&#9664;••</button>
                 <div className="border-l fill-black h-16 -mt-2"></div>
-                <div className="flex flex-col justify-center items-center" onClick={() => setActiveLoc(0)}>
+                <div className="flex flex-col justify-center items-center hover:cursor-pointer" onClick={() => setActiveLoc(0)}>
                     <img src="/icons/computer.png" alt="computer" className="h-8"/>
                     <p className="font-l">Computer</p>
                 </div>
-                <div className="flex flex-col justify-center items-center" onClick={() => setActiveLoc(1)}>
+                <div className="flex flex-col justify-center items-center hover:cursor-pointer" onClick={() => setActiveLoc(1)}>
                     <img src="/icons/home.png" alt="home" className="h-8" />
                     <p className="font-l">Home</p>
                 </div>
-                <div className="flex flex-col justify-center items-center" onClick={() => setActiveLoc(2)}>
+                <div className="flex flex-col justify-center items-center hover:cursor-pointer" onClick={() => setActiveLoc(2)}>
                     <img src="/icons/favorites.png" alt="favorites" className="h-6" />
                     <p className="font-l translate-y-1">Favorites</p>
                 </div>
-                <div className="flex flex-col justify-center items-center" onClick={() => setActiveLoc(3)}>
+                <div className="flex flex-col justify-center items-center hover:cursor-pointer" onClick={() => setActiveLoc(3)}>
                     <img src="/icons/apps.png" alt="applications" className="h-8" />
                     <p className="font-l">Applications</p>
                 </div>

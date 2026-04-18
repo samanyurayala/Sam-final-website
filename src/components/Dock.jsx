@@ -1,6 +1,5 @@
 import { dockApps } from '@constants';
 import React from 'react'
-import { useRef } from 'react';
 import { Tooltip } from 'react-tooltip';
 import useWindowStore from '@store/window';
 
