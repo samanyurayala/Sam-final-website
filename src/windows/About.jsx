@@ -16,13 +16,13 @@ const About = () => {
             <hr />
             <div className="bg-white font-l flex justify-center">
                 <p className="text-3xl pt-3 pb-3 text-center">Skills:
-                    <ul className="list-none text-xl text-center">
-                        <li>HTML, CSS, JavaScript ✔</li>
-                        <li>React, TailwindCSS ✔</li>
-                        <li>Java ✔</li>
-                        <li>Python ✔</li>
-                        <li>C++ ✔</li>
-                    </ul>
+                <ul className="list-none text-xl text-center">
+                    <li>HTML, CSS, JavaScript ✔</li>
+                    <li>React, TailwindCSS ✔</li>
+                    <li>Java ✔</li>
+                    <li>Python ✔</li>
+                    <li>C++ ✔</li>
+                </ul>
                 </p>
             </div>
             <hr />

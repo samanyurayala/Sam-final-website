@@ -6,7 +6,6 @@ import useWindowStore from '@store/window';
 
 const Dock = () => {
     const { openWindow, focusWindow, windows } = useWindowStore();
-    const dockRef = useRef(null);
 
     const toggle = (app) => {
         if (!app.openable) return;
@@ -21,7 +20,7 @@ const Dock = () => {
 
     return (
     <section id="dock">
-        <div ref={dockRef} className="dock-container">
+        <div className="dock-container">
             {dockApps.map(({ id, name, icon, openable }) => (
                 <div key={id} className="relative flex justify-center">
                     <button type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-toolship-delay-show={0} disabled={!openable} onClick={() => toggle({ id, openable })}>

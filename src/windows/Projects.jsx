@@ -9,9 +9,6 @@ const Projects = () => {
   const focusedWindowKey = useWindowStore((state) => state.focusedWindowKey);
   const [index, setIndex] = useState(0);
   useEffect(() => {
-    console.log("UPDATED:", focusedWindowKey);
-  }, [focusedWindowKey]);
-  useEffect(() => {
     const switchProject = (e) => {
       if (focusedWindowKey !== "explorer") return;
       const maxLength = EXPLORER_PROJECTS.length - 1;
