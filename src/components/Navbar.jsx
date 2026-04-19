@@ -1,4 +1,3 @@
-import { timeState } from '../global/index.js';
 import React from 'react';
 import useWindowStore from '@store/window';
 import { useEffect } from 'react';
