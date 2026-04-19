@@ -28,11 +28,12 @@ const homeApps = [
 ];
 const INIT_Z = 1000;
 const WINDOW_CONFIG = {
-    finder: { open: false, zIndex: INIT_Z, data: null}, 
-    welcome: { open: true, zIndex: INIT_Z, data: null},
-    mail: { open: false, zIndex: INIT_Z, data: null},
-    explorer: { open: false, zIndex: INIT_Z, data: null},
-    preferences: { open: false, zIndex: INIT_Z, data: null},
+    finder: { open: false, zIndex: INIT_Z, data: null }, 
+    welcome: { open: true, zIndex: INIT_Z, data: null },
+    mail: { open: false, zIndex: INIT_Z, data: null },
+    explorer: { open: false, zIndex: INIT_Z, data: null },
+    preferences: { open: false, zIndex: INIT_Z, data: null },
+    quicktimeplayer: { open: false, zIndex: INIT_Z, data: null }
 };
 const EXPLORER_PROJECTS = [
     { num: 1, id: "convenientminecraft", name: "Convenient Minecraft", description: "A Minecraft java mod that adds convenient features.", url: "https://modrinth.com/mod/convenient-minecraft" }, 

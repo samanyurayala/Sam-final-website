@@ -248,4 +248,11 @@ html, body {
       }
     }
   }
+
+  #quicktimeplayer {
+    @apply w-[65vw] max-h-[90vh] max-w-250 min-w-87.5 min-h-62.5 overflow-hidden flex flex-col;
+    .window-header {
+      @apply shrink-0;
+    }
+  }
 }

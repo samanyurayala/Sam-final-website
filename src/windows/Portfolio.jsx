@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const Portfolio = () => {
     const [activeLoc, setActiveLoc] = useState(1);
-    const { openWindow, focusWindow, windows } = useWindowStore();
+    const { openWindow, openVideoWindow, focusWindow, windows } = useWindowStore();
     const toggle = (app) => {
         if (!app.openable && app.link === "") return;
         const thisWindow = windows[app.id];
@@ -53,14 +53,22 @@ const Portfolio = () => {
             <hr />
             <div className="bg-white pt-4 h-100">
                 <div className="grid grid-cols-3 gap-5">
-                    {locations[activeLoc].apps.map(({ id, name, icon, openable, link }) => (
-                        <div key={id} className="flex flex-col justify-center items-center">
-                            <button type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-toolship-delay-show={0} onClick={() => toggle({ id, openable, link })}>
+                    {locations[activeLoc].apps.map(({ id, name, icon, openable, link }) => {
+                        const isQuickTime = id === "quicktimeplayer"
+                        return (<div key={id} className="flex flex-col justify-center items-center">
+                            <button type="button" className="dock-icon" aria-label={name} data-tooltip-id="dock-tooltip" data-tooltip-content={name} data-toolship-delay-show={0} onClick={() => toggle({ id, openable, link })} onDragOver={(e) => {if (isQuickTime) e.preventDefault()}} onDrop={(e) => {
+                                if (!isQuickTime) return;
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const file = e.dataTransfer.files[0];
+                                if (!file || !file.type.startsWith("video/")) return;
+                                openVideoWindow(file);
+                            }}>
                                 <img src={`/icons/${icon}`} alt={name} loading="lazy" className={'h-10 hover:cursor-pointer'} />
                             </button>
                             <p className="font-l">{name}</p>
                         </div>
-                    ))}
+                    )})}
                 </div>
             </div>
         </div>

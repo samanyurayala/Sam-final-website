@@ -29,6 +29,16 @@ const useWindowStore = create(immer((set) => ({
             win.zIndex = state.nextZIndex++;
             state.focusedWindowKey = windowKey;
         }),
+        openVideoWindow: (file) => set((state) => {
+            const windowKey = "quicktimeplayer";
+            const win = state.windows[windowKey];
+            if (!win) return;
+            win.open = true;
+            win.zIndex = state.nextZIndex;
+            win.data = {...win.data, file};
+            state.nextZIndex++;
+            state.focusedWindowKey = windowKey;
+        })
     })), 
 );
 
