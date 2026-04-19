@@ -37,7 +37,7 @@ const Projects = () => {
         </div>
         <div className="content">
             <div className="search font-l text-xs text-white">Address: <div>@ https://www.therealsam.com/{project.id}</div></div>
-            <p className="font-l-bold text-2xl mt-2 underline"><a href={project.url}>{project.name}</a></p>
+            <p className="font-l-bold text-2xl mt-2 underline"><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></p>
             <p className="font-l text-base mb-2">{project.description}</p>
             <img src={`/images/${project.id}.avif`} alt={project.name} />
         </div>

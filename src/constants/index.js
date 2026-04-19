@@ -11,7 +11,7 @@ const dockApps = [
     { id: "trash", name: "Trash", icon: "trash.png", openable: false, link: "" },
 ];
 const otherApps = [
-    { id: "chess", name: "Chess", icon: "chess.png", openable: false, link: "" }, 
+    { id: "chess", name: "Chess", icon: "chess.png", openable: false, link: "https://www.mediafire.com/file/w1s1452mflhqa3p/CustomChess.jar/file" }, 
     { id: "quicktimeplayer", name: "Quicktime Player", icon: "quicktimeplayer.png", openable: false, link: "" }, 
     { id: "calculator", name: "Calculator", icon: "calculator.png", openable: false, link: "" }, 
     { id: "battery", name: "Battery", icon: "battery.png", openable: false, link: "" }
@@ -36,12 +36,13 @@ const WINDOW_CONFIG = {
     quicktimeplayer: { open: false, zIndex: INIT_Z, data: null }
 };
 const EXPLORER_PROJECTS = [
-    { num: 1, id: "convenientminecraft", name: "Convenient Minecraft", description: "A Minecraft java mod that adds convenient features.", url: "https://modrinth.com/mod/convenient-minecraft" }, 
-    { num: 2, id: "freshcheck", name: "FreshCheck", description: "A compact solution for monitoring food freshness.", url: "https://github.com/samanyurayala/FreshCheck" }, 
-    { num: 3, id: "asciiimagegenerator", name: "Ascii Image Generator", description: "Made with C++ and ported to the web using WebAssembly.", url: "https://samanyurayala.github.io/ASCII-Image-Generator/" }, 
-    { num: 4, id: "banefulduality", name: "Baneful Duality", description: "Deliver the cure to the zombie virus.", url: "https://sidsenthil-exe.itch.io/baneful-duality" }, 
-    { num: 5, id: "forestsurvivorpro", name: "Forest Survivor Pro", description: "Complete all the tasks without getting hunted down.", url: "https://samcompany.itch.io/forestsurvivorpro" }, 
-    { num: 6, id: "signupwizard", name: "Easy Signup", description: "An easy, intuitive signup wizard.", url: "https://samanyurayala.github.io/Signup-Wizard/" }
+    { num: 1, id: "customchess", name: "Custom (not yet) Chess", description: "Chess, but with custom pieces (not here yet right now just chess)", url: "https://www.mediafire.com/file/w1s1452mflhqa3p/CustomChess.jar/file" }, 
+    { num: 2, id: "convenientminecraft", name: "Convenient Minecraft", description: "A Minecraft java mod that adds convenient features.", url: "https://modrinth.com/mod/convenient-minecraft" }, 
+    { num: 3, id: "freshcheck", name: "FreshCheck", description: "A compact solution for monitoring food freshness.", url: "https://github.com/samanyurayala/FreshCheck" }, 
+    { num: 4, id: "asciiimagegenerator", name: "Ascii Image Generator", description: "Made with C++ and ported to the web using WebAssembly.", url: "https://samanyurayala.github.io/ASCII-Image-Generator/" }, 
+    { num: 5, id: "banefulduality", name: "Baneful Duality", description: "Deliver the cure to the zombie virus.", url: "https://sidsenthil-exe.itch.io/baneful-duality" }, 
+    { num: 6, id: "forestsurvivorpro", name: "Forest Survivor Pro", description: "Complete all the tasks without getting hunted down.", url: "https://samcompany.itch.io/forestsurvivorpro" }, 
+    { num: 7, id: "signupwizard", name: "Easy Signup", description: "An easy, intuitive signup wizard.", url: "https://samanyurayala.github.io/Signup-Wizard/" }
 ];
 
 const locations = [

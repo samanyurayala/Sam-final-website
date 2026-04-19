@@ -12,8 +12,7 @@ const Portfolio = () => {
         if (!app.openable && app.link === "") return;
         const thisWindow = windows[app.id];
         if (!app.openable) {
-            console.log(app.link);
-            window.location.assign(app.link);
+            window.open(app.link, "_blank", "noopener,noreferrer");
         }
         if (!thisWindow) return;
         if (thisWindow.open) {

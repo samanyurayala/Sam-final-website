@@ -14,9 +14,8 @@ const Quicktime = () => {
         }
         const objUrl = URL.createObjectURL(file);
         setUrl(objUrl);
-        return () => {
-            URL.revokeObjectURL(objUrl);
-        }
+        return () => URL.revokeObjectURL(objUrl);
+        
     }, [file]);
     return (
     <>
