@@ -2,12 +2,12 @@ import React, { useEffect } from 'react'
 import WindowWrapper from '@hoc/WindowWrapper';
 import WindowControls from '@components/WindowControls';
 import { useState } from 'react';
-import { useTimeStore } from '@store/time';
+import { useSettingsStore } from '@store/setting';
 
 const Settings = () => {
     const timeZones = Intl.supportedValuesOf("timeZone");
 
-    const { is12h, timeZone, setIs12h, setTimeZone } = useTimeStore();
+    const { is12h, timeZone, anim, direction, duration, setIs12h, setTimeZone, setAnim, setDirection, setDuration } = useSettingsStore();
 
     const [wallpaper, setWallpaperState] = useState(localStorage.getItem('wallpaper') || 'wallpaper');
 
@@ -51,6 +51,25 @@ const Settings = () => {
             <div className="flex flex-col items-center gap-0.5 mt-5">
                 <img src="/icons/animations.png" alt="animations" className="h-10" />
                 <p className="font-l translate-y-1">Animations</p>
+                <select name="anim" id="anim" className="font-l" value={anim} onChange={(e) => setAnim(e.target.value)}>
+                    <option value="power1">Power1</option>
+                    <option value="power2">Power2</option>
+                    <option value="power3">Power3</option>
+                    <option value="power4">Power4</option>
+                    <option value="sine">Sine</option>
+                    <option value="expo">Expo</option>
+                    <option value="circ">Circular</option>
+                    <option value="back">Back</option>
+                    <option value="bounce">Bounce</option>
+                    <option value="none">Linear</option>
+                </select>
+                <select name="direction" id="direction" value={direction} onChange={(e) => setDirection(e.target.value)}>
+                    <option value="in">In</option>
+                    <option value="out">Out</option>
+                    <option value="inOut">Both</option>
+                </select>
+                <input type="range" name="duration" id="duration" min="0.1" max="1.0" step="0.1" value={duration} onInput={(e) => document.getElementById("output").textContent = e.target.value} onChange={(e) => setDuration(e.target.value)}/>
+                <p id="output" className="font-l">{duration}</p>
             </div>
         </div>
     </>

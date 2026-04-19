@@ -2,13 +2,13 @@ import React from 'react';
 import useWindowStore from '@store/window';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useTimeStore } from '@store/time';
+import { useSettingsStore } from '@store/setting';
 
 
 const Navbar = () => {
     const { openWindow, focusWindow, windows } = useWindowStore();
 
-    const { is12h, timeZone } = useTimeStore();
+    const { is12h, timeZone } = useSettingsStore();
 
     const [rightNow, setRightNow] = useState("");
 
