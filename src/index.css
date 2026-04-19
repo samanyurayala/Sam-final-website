@@ -155,7 +155,7 @@ html, body {
     );
   }
 
-  #welcome, #explorer, #mail, #finder, #preferences {
+  #welcome, #explorer, #mail, #finder, #preferences, #quicktimeplayer {
     @apply absolute top-32 left-1/12 shadow-2xl drop-shadow-2xl rounded-b-xs rounded-t-md overflow-hidden;
     background-image: repeating-linear-gradient(
       to bottom, 

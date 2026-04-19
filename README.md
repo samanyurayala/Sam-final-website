@@ -1,16 +1,14 @@
-# React + Vite
+**My MacOS Portfolio**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I've always wanted to make an operating system portfolio. I've seen people do retro Windows os, or modern MacOS, so I decided to combine the two and make a retro MacOS portfolio. This is based on MacOS X Cheetah, which came out in 2001. 
 
-Currently, two official plugins are available:
+![The Portfolio](docs/images/myportfolio.avif)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+On the dock, you will see apps including Finder (Portfolio), Mail (About), Internet Explorer (Projects), System Preferences (Settings), Welcome, and Trash (not openable). 
 
-## React Compiler
+About just talks about me and my skills. Projects just shows my projects. Settings gives settings to change the wallpaper, the time format and timezone, and the animations. All of them save when you reload the tab. Welcome gives the welcome message (automatically opened when you go to the website). 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The portfolio has 4 sections (Computer, Home, Favorites, Applications). There is also a back button to go back 1 tab. 
+Home is the default screen which has resume + awards. Computer and Favorites have some files in them. Applications has all of the applications in the dock including some extra ones, some of them having extra functionality. For example, if you drag and drop a video over the Quicktime Player icon, it will open a new window in the OS and play the video. 
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Applications](docs/images/applications.avif)
