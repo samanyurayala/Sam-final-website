@@ -10,6 +10,12 @@ const dockApps = [
     { id: "welcome", name: "Welcome", icon: "welcome.png", openable: true, link: "" },
     { id: "trash", name: "Trash", icon: "trash.png", openable: false, link: "" },
 ];
+const otherApps = [
+    { id: "chess", name: "Chess", icon: "chess.png", openable: false, link: "" }, 
+    { id: "quicktimeplayer", name: "Quicktime Player", icon: "quicktimeplayer.png", openable: false, link: "" }, 
+    { id: "calculator", name: "Calculator", icon: "calculator.png", openable: false, link: "" }, 
+    { id: "battery", name: "Battery", icon: "battery.png", openable: false, link: "" }
+];
 const favoritesApps = [
     { id: "computer", name: "This Computer", icon: "folder.png", openable: false, link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" }
 ];
@@ -41,6 +47,6 @@ const locations = [
     { id: 1, apps: computerApps },
     { id: 2, apps: homeApps },
     { id: 3, apps: favoritesApps },
-    { id: 4, apps: dockApps }
+    { id: 4, apps: [...dockApps, ...otherApps] }
 ];
 export { navBarLinks, dockApps, INIT_Z, WINDOW_CONFIG, EXPLORER_PROJECTS, locations };

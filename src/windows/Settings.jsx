@@ -24,7 +24,7 @@ const Settings = () => {
             <WindowControls target="preferences" />
             <h2>Settings</h2>
         </div>
-        <div className="content h-50 flex gap-10 pl-10">
+        <div className="content h-55 flex gap-10 pl-10">
             <div className="flex flex-col items-center gap-0.5 mt-5">
                 <img src="/icons/screensaver.png" alt="wallpaper" className="h-10" />
                 <p className="font-l translate-y-1">Wallpaper</p>
@@ -61,7 +61,6 @@ const Settings = () => {
                     <option value="circ">Circular</option>
                     <option value="back">Back</option>
                     <option value="bounce">Bounce</option>
-                    <option value="none">Linear</option>
                 </select>
                 <select name="direction" id="direction" value={direction} onChange={(e) => setDirection(e.target.value)}>
                     <option value="in">In</option>

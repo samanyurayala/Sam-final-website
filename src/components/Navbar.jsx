@@ -19,7 +19,7 @@ const Navbar = () => {
             setRightNow(currentTime.format(new Date()));
         };
         updateTime();
-        const interval = setInterval(updateTime, 1000);
+        const interval = setInterval(updateTime, 10000);
         return () => clearInterval(interval);
     }, [timeZone, is12h]);
 
